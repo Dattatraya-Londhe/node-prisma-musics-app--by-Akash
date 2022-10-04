@@ -19,14 +19,14 @@ model Account {
 }
 
 model UserInfo {
-  id        String   @id @default(uuid())
+  id        String    @id @default(uuid())
   firstName String
   lastName  String
-  email     String   @unique
+  email     String    @unique
   phone     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  deletedAt DateTime
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 
   //  Account Account
   account           Account?
@@ -58,21 +58,21 @@ model Podcast {
 }
 
 model PodcastEpisode {
-  id          String   @id @default(uuid())
+  id          String    @id @default(uuid())
   episodeName String
   credits     Json
-  podcastInfo Podcast  @relation(fields: [podcastId], references: [id])
+  podcastInfo Podcast   @relation(fields: [podcastId], references: [id])
   podcastId   String
-  releaseDate DateTime
+  releaseDate DateTime?
 }
 
 model Audiobook {
-  id           String   @id @default(uuid())
+  id           String    @id @default(uuid())
   name         String
-  credits      Json
-  artistInfo   Artist   @relation(fields: [artistId], references: [id])
-  releaseDate  DateTime
-  studioIdInfo Studio   @relation(fields: [studioId], references: [id])
+  credits      Json?
+  artistInfo   Artist    @relation(fields: [artistId], references: [id])
+  releaseDate  DateTime?
+  studioIdInfo Studio    @relation(fields: [studioId], references: [id])
   artistId     String
   studioId     String
 }
@@ -89,7 +89,7 @@ model Playlist {
 model Single {
   id             String     @id @default(uuid())
   singleName     String
-  artistNameInfo Artist     @relation(fields: [artistId], references: [id])
+  artistNameInfo Artist?    @relation(fields: [artistId], references: [id])
   albumIdInfo    Album      @relation(fields: [albumId], references: [id])
   releaseDate    DateTime
   artistId       String
@@ -117,7 +117,7 @@ model Studio {
   phone      String
   createdAt  DateTime    @default(now())
   updatedAt  DateTime    @updatedAt
-  deletedAt  DateTime
+  deletedAt  DateTime?
   albums     Album[]
   audiobooks Audiobook[]
   podcasts   Podcast[]

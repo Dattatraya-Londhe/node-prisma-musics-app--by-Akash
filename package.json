@@ -1,10 +1,11 @@
 {
   "name": "new-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. create 5 accounts\r 2. Out of those 5 accounts, 3 of them will be artists\r 3. For every artist create 2 podcast and podcast will have 2-5 episodes\r 4. create 2-3 `Audiobook`\r 5. create 2-3 audio playlist, and some of those playlist will have followers\r 6. in the `single` table, `artistNameInfo` should be optional (here you will need to add extra migration to existing migrations)\r 7. now with step-6 in place, create some of `single` records without referencing to `Album` table and some referencing to `Album` table\r 8. fetch the data as per following requirements",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx ts-node index.ts"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,13 @@
   },
   "dependencies": {
     "@prisma/client": "^4.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dattatraya-Londhe/node-prisma-musics-app--by-Akash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dattatraya-Londhe/node-prisma-musics-app--by-Akash/issues"
+  },
+  "homepage": "https://github.com/Dattatraya-Londhe/node-prisma-musics-app--by-Akash#readme"
 }
