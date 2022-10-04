@@ -28,7 +28,7 @@ model UserInfo {
   updatedAt DateTime  @updatedAt
   deletedAt DateTime?
 
-  //  Account Account
+  //  Account Account added
   account           Account?
   artist            Artist?
   playlistsCreated  Playlist[] @relation(name: "createdByUserInfo")
